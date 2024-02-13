@@ -52,6 +52,7 @@ def test_init(category):
     for i in category.products:
         sum += i["quantity"]
     assert sum == 27
+    assert len(category.products) == 3
 
 
 @pytest.fixture
@@ -64,3 +65,4 @@ def test_init_1(product):
     assert product.description == "512GB, Gray space"
     assert product.price == 31000.0
     assert product.quantity == 8
+
