@@ -1,3 +1,6 @@
+import json
+
+
 class Category:
     '''класс Category с атрибутами имя, описание, товары, общее количество категорий и общее количество уникальных продуктов'''
     name: list
@@ -25,3 +28,7 @@ class Product:
         self.description = description
         self.price = price
         self.quantity = quantity
+
+
+
+
