@@ -11,8 +11,11 @@ produc = load_file()
 
 for i in produc:
     category_ = Category(i["name"], i["description"], i["products"])
+    print(f"Категория:{category_.name},\n"
+          f"Описание:{category_.description}")
     for elem in i["products"]:
         product = Product(elem['name'], elem['description'], elem['price'], elem['quantity'])
+        print(f"Наименование:{product.name},\nОписание:{product.description},\n"
+              f"Цена:{product.price},\nКоличество:{product.quantity}")
 
-print(f"{category_.name}, {category_.description}, {category_.products}")
-print(f"{product.name}, {product.description}, {product.price}, {product.quantity}")
+
