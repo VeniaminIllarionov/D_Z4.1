@@ -17,16 +17,19 @@ class Category:
         return self.__products
 
     def append_product(self, new_product=dict):
+        """Добавление продукта"""
         self.__products.append(new_product)
         return self.__products
 
     @property
     def products_dispaly(self):
+        """Конструктор вывода"""
         products = self.__products
         for product in products:
             return f"{product['name']}, {product['price']} руб. Остаток: {product['quantity']} шт."
 
     def examination_products(self, name, descreption, price, quantity):
+        """Проверка продукта есть ли он в списке"""
         new_product = Product.add_product(name, descreption, price, quantity)
         for i in self.__products:
             if new_product['name'] == i['name']:
@@ -51,11 +54,12 @@ class Product:
     def __init__(self, name, description, price, quantity):
         self.name = name
         self.description = description
-        self.price = price
+        self._price = price
         self.quantity = quantity
 
     @staticmethod
     def add_product(name, description, price, quantity):
+        """Добавление товара"""
         product_dict = {"name": None, "description": None,
                         "price": None, "quantity": None}
         name_input = name
@@ -68,13 +72,22 @@ class Product:
         product_dict["quantity"] = int(quantity_input)
         return product_dict
 
+    @property
+    def price_(self):
+        if self._price <= 0:
+            print("Цена не корректная")
+            return self._price
+        else:
+            return self._price
+
+    @price_.setter
+    def price(self, price):
+        self._price = price
 
 
-    # @classmethod
-    # def append_product(cls, new_product):
-    # for i in cls.products:
-    # if new_product['name'] in i['name']:
-    # i['quantity'] += new_product['quantity']
-    # elif new_product['name'] not in i['name']:
 
-    # cls.products.append(new_product)
+
+
+
+
+
