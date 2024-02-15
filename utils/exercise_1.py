@@ -41,18 +41,31 @@ class Product:
         self.quantity = quantity
 
     @staticmethod
-    def add_product():
+    def add_product(name, description, price, quantity):
         product_dict = {"name": None, "description": None,
                         "price": None, "quantity": None}
-        name_input = input("Введите наименование товара")
-        description_input = input("Введите описание товара")
-        price_input = input("Введите цену товара")
-        quantity_input = input("Введите количество товара")
+        name_input = name
+        description_input = description
+        price_input = price
+        quantity_input = quantity
         product_dict["name"] = name_input
         product_dict["description"] = description_input
         product_dict["price"] = float(price_input)
         product_dict["quantity"] = int(quantity_input)
         return product_dict
+
+    def examination_products(self):
+        new_product = self.add_product("Samsung", "1024 Gb blue", 100000, 20)
+        for i in Category.products:
+            if new_product['name'] == i['name']:
+                i['quantity'] += new_product['quantity']
+                if new_product['price'] > i['price']:
+                    i['price'] = new_product['price']
+                    return i['price']
+                else:
+                    return i['price']
+            else:
+                Category.products.append(new_product)
 
     # @classmethod
     # def append_product(cls, new_product):

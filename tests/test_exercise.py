@@ -67,8 +67,6 @@ def test_init(category):
     assert category.products_dispaly == "Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт."
 
 
-
-
 @pytest.fixture
 def product():
     return Product("Iphone15", "512GB, Gray space", 31_000.0, 8)
@@ -79,4 +77,7 @@ def test_init_1(product):
     assert product.description == "512GB, Gray space"
     assert product.price == 31000.0
     assert product.quantity == 8
-
+    assert product.add_product("Samsung", "1024 Gb blue", 100000, 20) == {'name': 'Samsung',
+                                                                          'description': '1024 Gb blue',
+                                                                          'price': 100000.0, 'quantity': 20}
+    print(product.examination_products)
