@@ -9,14 +9,21 @@ class Category:
     products: list
 
     def __init__(self, name, description, products):
-        global sum
         self.name = name
         self.description = description
-        self.products = products
+        self.__products = products
         self.total_quantity_category = len(self.name)
         self.total_quantity_product = [elem["quantity"] for elem in products]
 
+    @property
+    def products(self):
+        return self.__products
 
+    @products.setter
+    def products(self, new_product):
+        self.__products.append(new_product)
+
+prod =
 class Product:
     '''класс Product с атрибутами имя, описание, ценой, количества'''
     name: str
@@ -29,7 +36,3 @@ class Product:
         self.description = description
         self.price = price
         self.quantity = quantity
-
-
-
-
