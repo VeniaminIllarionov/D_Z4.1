@@ -26,6 +26,20 @@ class Category:
         for product in products:
             return f"{product['name']}, {product['price']} руб. Остаток: {product['quantity']} шт."
 
+    def examination_products(self, name, descreption, price, quantity):
+        new_product = Product.add_product(name, descreption, price, quantity)
+        for i in self.__products:
+            if new_product['name'] == i['name']:
+                i['quantity'] += new_product['quantity']
+                if new_product['price'] > i['price']:
+                    i['price'] = new_product['price']
+                    return self.__products
+                else:
+                    return self.__products
+            else:
+                self.__products.append(new_product)
+                return self.__products
+
 
 class Product:
     '''класс Product с атрибутами имя, описание, ценой, количества'''
@@ -54,18 +68,7 @@ class Product:
         product_dict["quantity"] = int(quantity_input)
         return product_dict
 
-    def examination_products(self):
-        new_product = self.add_product("Samsung", "1024 Gb blue", 100000, 20)
-        for i in Category.products:
-            if new_product['name'] == i['name']:
-                i['quantity'] += new_product['quantity']
-                if new_product['price'] > i['price']:
-                    i['price'] = new_product['price']
-                    return i['price']
-                else:
-                    return i['price']
-            else:
-                Category.products.append(new_product)
+
 
     # @classmethod
     # def append_product(cls, new_product):
