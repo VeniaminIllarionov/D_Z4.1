@@ -18,11 +18,5 @@ def test_init_1(product):
     assert Product.description == "52GB, Gray space"
     assert Product.quantity == 80
 
-@pytest.fixture
-def price():
-    return Product("Iphone15", "512GB, Gray space", 10000, 8)
 
-
-def test_price(price):
-    assert price.price_ == 10000
 

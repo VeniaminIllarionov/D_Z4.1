@@ -26,6 +26,13 @@ class Product:
         else:
             return self.__price
 
+
     @price_.setter
     def price(self, price):
         self.__price = price
+
+
+cat = Product('sss', 'ffff', 50, 5)
+
+
+
