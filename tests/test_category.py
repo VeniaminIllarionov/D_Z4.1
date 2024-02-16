@@ -1,5 +1,6 @@
 import pytest
-from utils.exercise_1 import Category, Product
+from utils.Category import Category
+
 
 
 @pytest.fixture
@@ -74,25 +75,3 @@ def test_init(category):
                {'name': 'Samsung A51', 'description': '1024GB, Белый', 'price': 51000.0, 'quantity': 14}]
 
 
-@pytest.fixture
-def product():
-    return Product("Iphone15", "512GB, Gray space", 31_000.0, 8)
-
-
-def test_init_1(product):
-    assert product.name == "Iphone15"
-    assert product.description == "512GB, Gray space"
-    assert product.price == 31000.0
-    assert product.quantity == 8
-    assert product.add_product("Samsung", "1024 Gb blue", 100000, 20) == {'name': 'Samsung',
-                                                                          'description': '1024 Gb blue',
-                                                                          'price': 100000.0, 'quantity': 20}
-
-
-@pytest.fixture
-def price():
-    return Product("Iphone15", "512GB, Gray space", 0, 8)
-
-
-def test_price(price):
-    assert price.price_ == 0
