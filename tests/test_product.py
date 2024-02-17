@@ -12,7 +12,7 @@ def test_init_1(product):
     assert product.description == "512GB, Gray space"
     assert product.price == 31000.0
     assert product.quantity == 8
-    Product.new_product(["Ione15", "52GB, Gray space", 10000, 80])
+    Product.new_product("Ione15", "52GB, Gray space", 10000, 80)
     assert Product.name == "Ione15"
     assert Product.price == 10000
     assert Product.description == "52GB, Gray space"

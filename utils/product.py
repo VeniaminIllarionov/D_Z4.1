@@ -12,12 +12,12 @@ class Product:
         self.quantity = quantity
 
     @classmethod
-    def new_product(cls, new_product=list):
+    def new_product(cls, name, description, price, quantity):
         """Добавление товара"""
-        cls.name = new_product[0]
-        cls.description = new_product[1]
-        cls.price = new_product[2]
-        cls.quantity = new_product[3]
+        cls.name = name
+        cls.description = description
+        cls.price = price
+        cls.quantity = quantity
         return Product(cls.name, cls.description, cls.price, cls.quantity)
 
     @property
@@ -32,11 +32,4 @@ class Product:
         self.__price = value
 
 
-house = Product("dddd", 'ffff', price=50000.0, quantity=96)
 
-print(house.price)
-# 50000.0
-
-house.price = -50  # обновили значение
-print(house.price)
-# 45000.0
