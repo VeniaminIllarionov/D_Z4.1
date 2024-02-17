@@ -21,18 +21,17 @@ class Product:
 
     @property
     def price_(self):
-        if self.__price <= 0:
-            print("Цена не корректная")
-        else:
-            return self.__price
+        return self.__price
+
 
 
     @price_.setter
-    def price(self, price):
-        self.__price = price
+    def price_(self):
+        if self.__price <= 0:
+            print("Цена не корректная")
+            return
 
 
-cat = Product('sss', 'ffff', 50, 5)
 
 
 
