@@ -29,14 +29,14 @@ class Category:
         for product in products:
             return f"{product['name']}, {product['price']} руб. Остаток: {product['quantity']} шт."
 
-    def examination_products(self, new_product=list):
+    def examination_products(self, Product):
         """Проверка продукта есть ли он в списке"""
-        new_product = Product.new_product(new_product)
+        new_product = Product
         for i in self.products:
-            if Product.name == i['name']:
-                i['quantity'] += Product.quantity
-                if Product.price > i['price']:
-                    i['price'] = Product.price
+            if Product[0] == i['name']:
+                i['quantity'] += Product[3]
+                if Product[2] > i['price']:
+                    i['price'] = Product[2]
                     return self.products
                 else:
                     return self.products

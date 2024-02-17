@@ -1,5 +1,5 @@
 import json
-from Category import Category, Product
+from category import Category, Product
 
 
 def load_file():

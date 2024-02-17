@@ -18,6 +18,7 @@ class Product:
         cls.description = new_product[1]
         cls.price = new_product[2]
         cls.quantity = new_product[3]
+        return Product(cls.name, cls.description, cls.price, cls.quantity)
 
     @property
     def price(self):

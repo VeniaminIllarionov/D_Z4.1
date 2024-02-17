@@ -1,5 +1,5 @@
 import pytest
-from utils.Category import Category
+from utils.category import Category
 
 
 @pytest.fixture
