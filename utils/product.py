@@ -14,11 +14,8 @@ class Product:
     @classmethod
     def new_product(cls, name, description, price, quantity):
         """Добавление товара"""
-        cls.name = name
-        cls.description = description
-        cls.price = price
-        cls.quantity = quantity
-        return Product(cls.name, cls.description, cls.price, cls.quantity)
+        return cls(name, description, price, quantity)
+
 
     @property
     def price(self):
@@ -32,4 +29,10 @@ class Product:
         self.__price = value
 
 
+
+new_product = Product.new_product('samsung', 'ffsafdf', 520000, 52)
+print(new_product.name)
+print(new_product.description)
+print(new_product.price)
+print(new_product.quantity)
 
