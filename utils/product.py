@@ -8,7 +8,7 @@ class Product:
     def __init__(self, name, description, price, quantity):
         self.name = name
         self.description = description
-        self.__price = price
+        self._price = price
         self.quantity = quantity
 
     @classmethod
@@ -16,22 +16,26 @@ class Product:
         """Добавление товара"""
         cls.name = new_product[0]
         cls.description = new_product[1]
-        cls.price = new_product[2]
+        cls._price = new_product[2]
         cls.quantity = new_product[3]
 
     @property
-    def price_(self):
-        return self.__price
+    def price(self):
+        return self._price
 
-
-
-    @price_.setter
-    def price_(self):
-        if self.__price <= 0:
+    @price.setter
+    def price(self, value):
+        if value <= 0:
             print("Цена не корректная")
             return
+        self._price = value
 
 
+house = Product("dddd", 'ffff', price=50000.0, quantity=96)
 
+print(house.price)
+# 50000.0
 
-
+house.price = -50  # обновили значение
+print(house.price)
+# 45000.0
