@@ -31,43 +31,17 @@ class Category:
         for product in products:
             return f"{product['name']}, {product['price']} руб. Остаток: {product['quantity']} шт."
 
-    def examination_products(self):
-        """Проверка продукта есть ли он в списке"""
-        new_product = [Product.name, Product.description, Product.price, Product.quantity]
-        for i in self.products:
+    def examination_products(self, Product):
+        '''Проверка продукта есть ли он в списке'''
+        for i in self.__products:
             if Product.name == i['name']:
                 i['quantity'] += Product.quantity
                 if Product.price > i['price']:
                     i['price'] = Product.price
-                    return self.products
+                    return self.__products
                 else:
-                    return self.products
+                    return self.__products
             else:
-                return new_product
+                return Product.name, Product.description, Product.price, Product.quantity
 
 
-sss = Product('Samsung', "222", 52000, 25)
-aaa = Category(["Смартфоны"], "Смартфон облегчают жизнь", [
-    {
-        "name": "Samsung Galaxy C23 Ultra",
-        "description": "256GB, Серый цвет, 200MP камера",
-        "price": 180000.0,
-        "quantity": 5
-    },
-    {
-        "name": "Iphone 15",
-        "description": "512GB, Gray space",
-        "price": 210000.0,
-        "quantity": 8
-    },
-    {
-        "name": "Xiaomi Redmi Note 11",
-        "description": "1024GB, Синий",
-        "price": 31000.0,
-        "quantity": 14
-    }])
-sss.new_product(["Ione15", "52GB, Gray space", 10000, 80])
-print(sss.name)
-print(sss.description)
-print(sss.price)
-print(sss.quantity)
