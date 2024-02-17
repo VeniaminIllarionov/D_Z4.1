@@ -8,7 +8,7 @@ class Product:
     def __init__(self, name, description, price, quantity):
         self.name = name
         self.description = description
-        self._price = price
+        self.__price = price
         self.quantity = quantity
 
     @classmethod
@@ -16,19 +16,19 @@ class Product:
         """Добавление товара"""
         cls.name = new_product[0]
         cls.description = new_product[1]
-        cls._price = new_product[2]
+        cls.price = new_product[2]
         cls.quantity = new_product[3]
 
     @property
     def price(self):
-        return self._price
+        return self.__price
 
     @price.setter
     def price(self, value):
         if value <= 0:
             print("Цена не корректная")
             return
-        self._price = value
+        self.__price = value
 
 
 house = Product("dddd", 'ffff', price=50000.0, quantity=96)
