@@ -19,8 +19,9 @@ class Category:
     def products(self):
         return self.__products
 
-    def append_product(self, new_product):
+    def append_product(self, name, description, price, quantity):
         """Добавление продукта"""
+        new_product = {'name': name, 'description': description, 'price': price, 'quantity': quantity}
         self.__products.append(new_product)
         return self.__products
 
