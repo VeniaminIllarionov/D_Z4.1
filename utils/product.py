@@ -16,7 +16,6 @@ class Product:
         """Добавление товара"""
         return cls(name, description, price, quantity)
 
-
     @property
     def price(self):
         return self.__price
@@ -28,11 +27,7 @@ class Product:
             return
         self.__price = value
 
+emp1 = Product.new_product('ssssssddddffss', 'ssswwwwws', 55555555, 20)
 
-
-new_product = Product.new_product('samsung', 'ffsafdf', 520000, 52)
-print(new_product.name)
-print(new_product.description)
-print(new_product.price)
-print(new_product.quantity)
-
+print(emp1.name)
+print(emp1.price)

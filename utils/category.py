@@ -31,17 +31,17 @@ class Category:
         for product in products:
             return f"{product['name']}, {product['price']} руб. Остаток: {product['quantity']} шт."
 
-    def examination_products(self, Product):
+    def examination_products(self, new_products):
         '''Проверка продукта есть ли он в списке'''
         for i in self.__products:
-            if Product.name == i['name']:
-                i['quantity'] += Product.quantity
-                if Product.price > i['price']:
-                    i['price'] = Product.price
+            if new_products.name == i['name']:
+                i['quantity'] += new_products.quantity
+                if new_products.price > i['price']:
+                    i['price'] = new_products.price
                     return self.__products
                 else:
                     return self.__products
             else:
-                return Product.name, Product.description, Product.price, Product.quantity
+                return new_products.name, new_products.description, new_products.price, new_products.quantity
 
 
