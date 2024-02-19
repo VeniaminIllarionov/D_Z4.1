@@ -40,3 +40,4 @@ def test_init(category):
         {'name': 'Xiaomi Redmi Note 11', 'description': '1024GB, Синий', 'price': 31000.0, 'quantity': 14},
         {'name': 'Xiaomi', 'description': '2548gb 520 MPx', 'price': 500000, 'quantity': 10}]
 
+
