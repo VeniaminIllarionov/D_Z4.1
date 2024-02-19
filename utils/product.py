@@ -1,7 +1,7 @@
 class Product:
     '''класс Product с атрибутами имя, описание, ценой, количества'''
     name: str
-    description: list
+    description: str
     price: float
     quantity: int
 

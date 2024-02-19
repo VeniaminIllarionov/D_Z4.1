@@ -13,7 +13,7 @@ class Category:
         self.description = description
         self.__products = products
         self.total_quantity_category = len(self.name)
-        self.total_quantity_product = sum(Product.quantity)
+        self.total_quantity_product = [elm['quantity'] for elm in products]
 
     @property
     def products(self):
@@ -21,9 +21,8 @@ class Category:
 
     def append_product(self, name, description, price, quantity):
         """Добавление продукта"""
-        new_product = {"name": name, "description": description, "price": float(price),"quantity": int(quantity)}
-        self.__products.append(new_product)
-        return self.__products
+        product = {'name': name, 'description': description, 'price': price, 'quantity': int(quantity)}
+        return self.__products.append(product)
 
     @property
     def products_dispaly(self):
