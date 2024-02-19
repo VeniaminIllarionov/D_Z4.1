@@ -27,7 +27,3 @@ class Product:
             return
         self.__price = value
 
-emp1 = Product.new_product('ssssssddddffss', 'ssswwwwws', 55555555, 20)
-
-print(emp1.name)
-print(emp1.price)
