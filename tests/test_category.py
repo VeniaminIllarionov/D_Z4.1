@@ -34,3 +34,9 @@ def test_init(category):
                                                'price': 210000.0, 'quantity': 8},
         {'name': 'Xiaomi Redmi Note 11', 'description': '1024GB, Синий',
          'price': 31000.0, 'quantity': 14}]
+    assert category.append_product('Xiaomi', '2548gb 520 MPx', 500000, 10) == [
+        {'name': 'Samsung Galaxy C23 Ultra', 'description': '256GB, Серый цвет, 200MP камера', 'price': 300000.0,
+         'quantity': 205}, {'name': 'Iphone 15', 'description': '512GB, Gray space', 'price': 210000.0, 'quantity': 8},
+        {'name': 'Xiaomi Redmi Note 11', 'description': '1024GB, Синий', 'price': 31000.0, 'quantity': 14},
+        {'name': 'Xiaomi', 'description': '2548gb 520 MPx', 'price': 500000, 'quantity': 10}]
+

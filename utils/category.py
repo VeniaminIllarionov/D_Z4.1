@@ -21,8 +21,9 @@ class Category:
 
     def append_product(self, name, description, price, quantity):
         """Добавление продукта"""
-        product = {'name': name, 'description': description, 'price': price, 'quantity': int(quantity)}
-        return self.__products.append(product)
+        product = {'name': name, 'description': description, 'price': price, 'quantity': quantity}
+        self.__products.append(product)
+        return self.__products
 
     @property
     def products_dispaly(self):
