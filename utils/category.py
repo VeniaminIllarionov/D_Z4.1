@@ -23,6 +23,7 @@ class Category:
         """Добавление продукта"""
         new_product = Product(name, description, price, quantity)
         self.__products.append(new_product)
+        self.total_quantity_product += 1
         return self.__products
 
     @property
