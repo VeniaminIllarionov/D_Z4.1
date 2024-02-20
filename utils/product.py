@@ -30,3 +30,16 @@ class Product:
             return
         self.__price = value
 
+    def examination_products(self, products=list):
+        '''Проверка продукта есть ли он в списке'''
+        for product in products:
+           if self.name == product['name']:
+              product['quantity'] += self.quantity
+              if self.__price > product["price"]:
+                  product['price'] = self.__price
+                  return products
+              else:
+                  return products
+           else:
+              return self.name, self.description, self.price, self.quantity
+

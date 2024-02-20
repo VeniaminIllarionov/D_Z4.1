@@ -12,7 +12,7 @@ class Category:
         self.name = name
         self.description = description
         self.__products = products
-        self.total_quantity_category = len(self.name)
+        # self.total_quantity_category = Category.
         self.total_quantity_product = [elm['quantity'] for elm in products]
 
     @property
@@ -22,29 +22,14 @@ class Category:
     def append_product(self, name, description, price, quantity):
         """Добавление продукта"""
         new_product = Product(name, description, price, quantity)
-        product = {'name': new_product.name, 'description': new_product.description, 'price': new_product.price,
-                   'quantity': new_product.quantity}
-        self.__products.append(product)
+        self.__products.append(new_product)
         return self.__products
 
     @property
     def products_dispaly(self):
         """Конструктор вывода"""
-        products = self.__products
-        for product in products:
-            return f"{product['name']}, {product['price']} руб. Остаток: {product['quantity']} шт."
-
-    def examination_products(self, new_products):
-        '''Проверка продукта есть ли он в списке'''
-        for i in self.__products:
-            if new_products.name == i['name']:
-                i['quantity'] += new_products.quantity
-                if new_products.price > i['price']:
-                    i['price'] = new_products.price
-                    return self.__products
-                else:
-                    return self.__products
-            else:
-                return new_products.name, new_products.description, new_products.price, new_products.quantity
-
-
+        prod_list = []
+        for product in self.__products:
+            prod = f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт."
+            prod_list.append(prod)
+        return prod_list
