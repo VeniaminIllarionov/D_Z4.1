@@ -26,6 +26,12 @@ def test_init(category):
                                          'Iphone 15, 1555555 руб. Остаток: 222 шт.']
     assert category.total_quantity_category == 1
     assert category.total_quantity_product == 4
+    category.examination_products('Samsung Galaxy C23 Ultra', '256GB, Серый цвет, 200MP камера',
+                                  250000.0, 25)
+    assert category.products_dispaly == ['Samsung Galaxy C23 Ultra, 250000.0 руб. Остаток: 30 шт.',
+                                         'Iphone 15, 210000.0 руб. Остаток: 8 шт.',
+                                         'Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.',
+                                         'Iphone 15, 1555555 руб. Остаток: 222 шт.']
 
 
 
