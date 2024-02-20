@@ -1,6 +1,4 @@
 
-
-
 class Product:
     '''класс Product с атрибутами имя, описание, ценой, количества'''
     name: str
@@ -42,4 +40,3 @@ class Product:
                   return products
            else:
               return self.name, self.description, self.price, self.quantity
-

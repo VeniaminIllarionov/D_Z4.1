@@ -14,7 +14,7 @@ def category():
 
 
 def test_init(category):
-    assert category.name == ["Смартфоны"]
+    assert category.name == ['Смартфоны']
     assert category.description == "Смартфон облегчают жизнь"
     assert category.products_dispaly == ['Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.',
                                          'Iphone 15, 210000.0 руб. Остаток: 8 шт.',
@@ -24,6 +24,7 @@ def test_init(category):
                                          'Iphone 15, 210000.0 руб. Остаток: 8 шт.',
                                          'Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.',
                                          'Iphone 15, 1555555 руб. Остаток: 222 шт.']
+    print(category.total_quantity_category)
 
 
 

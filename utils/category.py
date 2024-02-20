@@ -7,12 +7,12 @@ class Category:
     name: list
     description: str
     products: list
-
+    total_quantity_category = 0
     def __init__(self, name, description, products):
         self.name = name
         self.description = description
         self.__products = products
-        # self.total_quantity_category = Category.
+        Category.total_quantity_category += 1
         self.total_quantity_product = [elm['quantity'] for elm in products]
 
     @property
