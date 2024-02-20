@@ -29,4 +29,7 @@ class Product:
             return
         self.__price = value
 
+    def __str__(self):
+        return f'{self.name}, {self.description}, {self.price}, {self.quantity}'
+
 

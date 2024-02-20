@@ -1,6 +1,6 @@
 import pytest
 from utils.category import Category
-
+from utils.product import Product
 
 
 @pytest.fixture
@@ -32,6 +32,9 @@ def test_init(category):
                                          'Iphone 15, 210000.0 руб. Остаток: 8 шт.',
                                          'Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.',
                                          'Iphone 15, 1555555 руб. Остаток: 222 шт.']
+
+
+
 
 
 
