@@ -24,7 +24,11 @@ def test_init(category):
                                          'Iphone 15, 210000.0 руб. Остаток: 8 шт.',
                                          'Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.',
                                          'Iphone 15, 1555555 руб. Остаток: 222 шт.']
-    print(category.total_quantity_category)
+    assert category.total_quantity_category == 1
+    for i in category.products:
+        category.total_quantity_product += 1
+    assert category.total_quantity_product == 4
+
 
 
 

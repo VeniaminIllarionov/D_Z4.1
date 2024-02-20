@@ -13,7 +13,7 @@ class Category:
         self.description = description
         self.__products = products
         Category.total_quantity_category += 1
-        self.total_quantity_product = [elm['quantity'] for elm in products]
+        self.total_quantity_product = 0
 
     @property
     def products(self):
