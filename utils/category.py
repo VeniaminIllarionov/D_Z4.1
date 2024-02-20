@@ -8,13 +8,14 @@ class Category:
     description: str
     products: list
     total_quantity_category = 0
+    total_quantity_product = 0
 
     def __init__(self, name, description, products):
         self.name = name
         self.description = description
         self.__products = products
         Category.total_quantity_category += 1
-        self.total_quantity_product = 0
+
 
     @property
     def products(self):
@@ -24,7 +25,7 @@ class Category:
         """Добавление продукта"""
         new_product = Product(name, description, price, quantity)
         self.__products.append(new_product)
-        self.total_quantity_product += 1
+        Category.total_quantity_product += 1
         return self.__products
 
     @property
@@ -38,14 +39,14 @@ class Category:
 
     def examination_products(self, name, description, price, quantity):
         '''Проверка продукта есть ли он в списке'''
-        product = Product(name, description, price, quantity)
+        new_products = Product.new_product(name, description, price, quantity)
         for prod in self.__products:
-            if product.name == prod.name:
-                prod.quantity += product.quantity
-                if product.price > prod.price:
-                    prod.price = product.price
+            if new_products.name == prod.name:
+                prod.quantity += new_products.quantity
+                if new_products.price > prod.price:
+                    prod.price = new_products.price
                     return self.__products
                 else:
                     return self.__products
             else:
-                return product
+                return new_products
