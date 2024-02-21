@@ -4,7 +4,7 @@ from utils.product import Product
 class Category:
     '''класс Category с атрибутами имя, описание, товары, общее количество категорий и общее количество уникальных
     продуктов'''
-    name: list
+    name: str
     description: str
     products: list
     total_quantity_category = 0
@@ -15,7 +15,6 @@ class Category:
         self.description = description
         self.__products = products
         Category.total_quantity_category += 1
-
 
     @property
     def products(self):
@@ -50,3 +49,12 @@ class Category:
                     return self.__products
             else:
                 return new_products
+
+    def __str__(self):
+        return f'Название категории {self.name}, количество продуктов: {self.__len__()} шт.'
+
+    def __len__(self):
+        sum_product = 0
+        for i in self.__products:
+            sum_product += i.quantity
+        return sum_product
