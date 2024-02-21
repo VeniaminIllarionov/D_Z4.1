@@ -16,3 +16,4 @@ def test_init_1(product):
     assert str(product) == "Iphone15, 31000.0 руб. Остаток: 8 шт."
     product2 = Product.new_product("Iphone15", "512GB, Gray space", 10_000.0, 20)
     assert product + product2 == 448000.0
+

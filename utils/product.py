@@ -30,11 +30,14 @@ class Product:
         self.__price = value
 
     def __str__(self):
-        return f'{self.name}, {self.price} руб. Остаток: {self.quantity} шт.'
+        return f'{self.name}, {self.price} руб. Остаток: {self.__len__()} шт.'
 
     def __add__(self, other):
         sum1 = self.price * self.quantity + other.price * other.quantity
         return sum1
+
+    def __len__(self):
+        return self.quantity
 
 
 
