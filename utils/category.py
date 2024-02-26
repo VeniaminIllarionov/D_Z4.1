@@ -20,12 +20,16 @@ class Category:
     def products(self):
         return self.__products
 
-    def append_product(self, name, description, price, quantity):
+    def append_product(self, new_product):
         """Добавление продукта"""
-        new_product = Product(name, description, price, quantity)
-        self.__products.append(new_product)
-        Category.total_quantity_product += 1
-        return self.__products
+        if not isinstance(new_product, Product):
+            raise TypeError('Добавлять можно только объекты Product или его наследников')
+        elif not issubclass(type(new_product), Product):
+            raise TypeError('Добавлять можно только объекты Product или его наследников')
+        else:
+            self.products.append(new_product)
+            Category.total_quantity_product += 1
+            return self.products
 
     @property
     def products_dispaly(self):
@@ -36,9 +40,9 @@ class Category:
             prod_list.append(prod)
         return prod_list
 
-    def examination_products(self, name, description, price, quantity):
+    def examination_products(self, name, description, price, quantity, color):
         '''Проверка продукта есть ли он в списке'''
-        new_products = Product.new_product(name, description, price, quantity)
+        new_products = Product.new_product(name, description, price, quantity, color)
         for prod in self.__products:
             if new_products.name == prod.name:
                 prod.quantity += new_products.quantity
