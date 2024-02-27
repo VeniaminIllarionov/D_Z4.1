@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "d-z4-1"
+version = "0.1.0"
+description = ""
+authors = ["veniamin <venya957@gmail.com>"]
+readme = "README.md"
+packages = [{include = "d_z4"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pytest = "^8.0.0"
+pytest-cov = "^4.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
