@@ -14,11 +14,13 @@ class Category:
         self.name = name
         self.description = description
         self.__products = products
-        Category.total_quantity_category += 1
 
+        Category.total_quantity_category += 1
+        
     @property
     def products(self):
         return self.__products
+
 
     def append_product(self, new_product):
         """Добавление продукта"""
@@ -31,9 +33,11 @@ class Category:
             Category.total_quantity_product += 1
             return self.products
 
+
     @property
     def products_dispaly(self):
         """Конструктор вывода"""
+
         prod_list = []
         for product in self.__products:
             prod = f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт."
@@ -52,6 +56,7 @@ class Category:
                 else:
                     return self.__products
             else:
+
                 return new_products
 
     def __str__(self):
