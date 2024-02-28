@@ -14,7 +14,7 @@ for i in produc:
     print(f"Категория:{category_.name},\n"
           f"Описание:{category_.description}")
     for elem in i["products"]:
-        product = Product(elem['name'], elem['description'], elem['price'], elem['quantity'])
+        product = Product(elem['name'], elem['description'], elem['price'], elem['quantity'], )
         print(f"Наименование:{product.name},\nОписание:{product.description},\n"
               f"Цена:{product.price},\nКоличество:{product.quantity}")
 

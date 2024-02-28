@@ -16,3 +16,7 @@ def test_init(lawn_grass):
                         500, 'Italy', 12, "изумрудно-зеленый цвет")
     assert lawn_grass + prod_1 == 275000.0
     assert str(prod_1) == 'Премиум, 200.0 руб. Остаток: 500 шт.'
+    assert lawn_grass.__repr__() == ("Lawn_Grass(dict_items([('name', 'Стандартный'), ('description', 'Умеренное "
+                                     "устойчивость к механическим нагрузкам'), ('_Product__price', 175.0), "
+                                     "('quantity', 1000), ('color', 'привлекательный ярко-зеленый'), "
+                                     "('manuf_country', 'Russia'), ('germ_period', 24)]))")
