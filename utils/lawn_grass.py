@@ -1,8 +1,8 @@
-from utils.mixin_log import MixinLog
+from utils.abs_class import AbsClass
 from utils.product import Product
 
 
-class Lawn_Grass(Product, MixinLog):
+class Lawn_Grass(Product, AbsClass):
     """
     Класс наследние от класса Product
     """

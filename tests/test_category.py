@@ -11,8 +11,7 @@ def category():
                                  180000.0, 5, 'Серый цвет')
     cat_list.append_product(prod_1)
     cat_list.append_product(Product('Iphone 15', '512GB', 210000.0, 8, 'Gray space'))
-    cat_list.append_product(Product('Xiaomi Redmi Note 11', '1024GB', 31000.0,
-                                    14, 'Синий'))
+    cat_list.append_product(Product('Xiaomi Redmi Note 11', '1024GB', 31000.0, 14, 'Синий'))
 
     return cat_list
 

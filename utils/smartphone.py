@@ -1,8 +1,8 @@
-from utils.mixin_log import MixinLog
+from utils.abs_class import AbsClass
 from utils.product import Product
 
 
-class SmartPhone(Product, MixinLog):
+class SmartPhone(Product, AbsClass):
     """
     Класс наследние от класса Product
     """
