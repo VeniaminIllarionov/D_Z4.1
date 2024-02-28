@@ -16,11 +16,10 @@ class Category:
         self.__products = products
 
         Category.total_quantity_category += 1
-        
+
     @property
     def products(self):
         return self.__products
-
 
     def append_product(self, new_product):
         """Добавление продукта"""
@@ -32,7 +31,6 @@ class Category:
             self.products.append(new_product)
             Category.total_quantity_product += 1
             return self.products
-
 
     @property
     def products_dispaly(self):
