@@ -11,7 +11,6 @@ def product():
 
 def test_init_1(product):
     assert product.name == "Iphone15"
-
     assert product.description == "512GB"
     assert product.price == 31000.0
     assert product.quantity == 8

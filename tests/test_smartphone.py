@@ -1,6 +1,4 @@
 import pytest
-
-from utils.lawn_grass import Lawn_Grass
 from utils.smartphone import SmartPhone
 
 
