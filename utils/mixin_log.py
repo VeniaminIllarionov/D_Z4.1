@@ -5,4 +5,8 @@ class MixinLog:
 
     def __repr__(self):
         '''Method repr для вывода в инициализаторе сообщения в виде сзданного класа и его атрибутов(свойств)'''
-        return f'{self.__class__.__name__}({self.__dict__.items()})'
+        object_attributes = ''
+        for k, v in self.__dict__.items():
+            object_attributes += f'{k}: {v},'
+        return f"Создан объект со свойствами {object_attributes})"
+

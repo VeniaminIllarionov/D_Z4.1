@@ -1,5 +1,4 @@
 
-
 from utils.abs_class import AbsClass
 from utils.mixin_log import MixinLog
 
