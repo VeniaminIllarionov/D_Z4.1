@@ -6,3 +6,7 @@ class AbsClass(ABC):
     @abstractmethod
     def __str__(self):
         pass
+
+    @abstractmethod
+    def new_product(self, name, description, price, quantity, color):
+        pass
