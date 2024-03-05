@@ -27,6 +27,8 @@ class Category:
             raise TypeError('Добавлять можно только объекты Product или его наследников')
         elif not issubclass(type(new_product), Product):
             raise TypeError('Добавлять можно только объекты Product или его наследников')
+        elif new_product.quantity <= 0:
+            raise ValueError('Товар с нулевым количеством не может быть добавлен')
         else:
             self.products.append(new_product)
             Category.total_quantity_product += 1
@@ -43,7 +45,7 @@ class Category:
         return prod_list
 
     def examination_products(self, name, description, price, quantity, color):
-        '''Проверка продукта есть ли он в списке'''
+        """Проверка продукта есть ли он в списке"""
         new_products = Product.new_product(name, description, price, quantity, color)
         for prod in self.__products:
             if new_products.name == prod.name:
@@ -65,3 +67,14 @@ class Category:
         for i in self.__products:
             sum_product += i.quantity
         return sum_product
+
+    def average_price(self):
+        """Подсчет средней цены продуктов"""
+        average_price = []
+        try:
+            for i in self.__products:
+                average_price.append(round((i.price / i.quantity),2))
+        except ZeroDivisionError:
+            average_price.append(0)
+
+        return sum(average_price)

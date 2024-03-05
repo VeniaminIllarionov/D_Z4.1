@@ -1,4 +1,3 @@
-
 from utils.abs_class import AbsClass
 from utils.mixin_log import MixinLog
 
@@ -18,6 +17,7 @@ class Product(AbsClass, MixinLog):
         self.__price = price
         self.quantity = quantity
         self.color = color
+
     @classmethod
     def new_product(cls, name, description, price, quantity, color):
         """Добавление товара"""
