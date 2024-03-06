@@ -68,10 +68,12 @@ class Category:
 
     def average_price(self):
         """Подсчет средней цены продуктов"""
+        total_price = []
         average_price = []
         try:
             for i in self.__products:
-                average_price.append(round((i.price / i.quantity), 2))
+                total_price.append(i.price)
+                average_price = sum(total_price) / Category.total_quantity_product
         except ZeroDivisionError:
-            average_price.append(0)
-        return sum(average_price)
+            average_price = 0
+        return average_price
