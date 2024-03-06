@@ -14,7 +14,6 @@ class Category:
         self.name = name
         self.description = description
         self.__products = products
-
         Category.total_quantity_category += 1
 
     @property

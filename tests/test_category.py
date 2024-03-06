@@ -5,7 +5,6 @@ from utils.product import Product
 
 @pytest.fixture
 def category():
-
     cat_list = Category("Смартфоны", "Смартфон облегчают жизнь", [])
     prod_1 = Product.new_product('Samsung Galaxy C23 Ultra', '256GB, 200MP камера',
                                  180_000.0, 5, 'Серый цвет')
@@ -17,7 +16,6 @@ def category():
 
 
 def test_init(category):
-
     assert category.name == 'Смартфоны'
     assert category.description == "Смартфон облегчают жизнь"
     assert category.products_dispaly == ['Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.',
