@@ -14,7 +14,6 @@ class Category:
         self.name = name
         self.description = description
         self.__products = products
-
         Category.total_quantity_category += 1
 
     @property
@@ -27,8 +26,6 @@ class Category:
             raise TypeError('Добавлять можно только объекты Product или его наследников')
         elif not issubclass(type(new_product), Product):
             raise TypeError('Добавлять можно только объекты Product или его наследников')
-        elif new_product.quantity <= 0:
-            raise ValueError('Товар с нулевым количеством не может быть добавлен')
         else:
             self.products.append(new_product)
             Category.total_quantity_product += 1
@@ -70,11 +67,15 @@ class Category:
 
     def average_price(self):
         """Подсчет средней цены продуктов"""
+        total_price = []
         average_price = []
         try:
             for i in self.__products:
-                average_price.append(round((i.price / i.quantity),2))
+                total_price.append(i.price)
+                average_price = round(sum(total_price) / self.__len__(), 2)
         except ZeroDivisionError:
-            average_price.append(0)
+            average_price = 0
+        return average_price
 
-        return sum(average_price)
+
+
