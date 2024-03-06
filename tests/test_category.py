@@ -35,4 +35,4 @@ def test_init(category):
                                          'Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.',
                                          'Iphone 15, 250000.0 руб. Остаток: 222 шт.']
     assert str(category) == 'Название категории Смартфоны, количество продуктов: 274 шт.'
-    assert category.average_price() == 185250.0
+    assert category.average_price() == 2704.38
