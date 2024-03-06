@@ -71,7 +71,7 @@ class Category:
         average_price = []
         try:
             for i in self.__products:
-                total_price.append(i.price)
+                total_price.append(i.price * i.quantity)
                 average_price = round(sum(total_price) / self.__len__(), 2)
         except ZeroDivisionError:
             average_price = 0
