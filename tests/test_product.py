@@ -19,3 +19,5 @@ def test_init_1(product):
     assert product + product2 == 448000.0
     assert product.__repr__() == ('Создан объект со свойствами name: Iphone15,description: '
                                   '512GB,_Product__price: 31000.0,quantity: 8,color: Gray space,)')
+    with pytest.raises(ValueError, match="Товар с нулевым количеством не может быть добавлен"):
+        Product.new_product('simens', 'good phone', 10_000, 0, "Blue")

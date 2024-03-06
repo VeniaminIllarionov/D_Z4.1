@@ -37,6 +37,4 @@ def test_init(category):
                                          'Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.',
                                          'Iphone 15, 1555555 руб. Остаток: 222 шт.']
     assert str(category) == 'Название категории Смартфоны, количество продуктов: 274 шт.'
-    with pytest.raises(ValueError, match="Товар с нулевым количеством не может быть добавлен"):
-        category.append_product(Product('simens', 'good phone', 10_000, 0, "Blue"))
     assert category.average_price() == 43804.62
