@@ -26,6 +26,8 @@ class Category:
             raise TypeError('Добавлять можно только объекты Product или его наследников')
         elif not issubclass(type(new_product), Product):
             raise TypeError('Добавлять можно только объекты Product или его наследников')
+        elif new_product.quantity <= 0:
+            raise ValueError('Товар с нулевым количеством не может быть добавлен')
         else:
             self.products.append(new_product)
             Category.total_quantity_product += 1
