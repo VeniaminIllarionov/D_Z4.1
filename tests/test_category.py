@@ -37,5 +37,5 @@ def test_init(category):
     assert str(category) == 'Название категории Смартфоны, количество продуктов: 274 шт.'
     assert category.average_price() == 237642.34
     with pytest.raises(ValueError, match="Товар с нулевым количеством не может быть добавлен"):
-        Product.new_product('Iphone 15', '512GB', 90_000.0, 0, 'Gray space')
+        category.append_product(Product('Iphone 15', '512GB', 90_000.0, 0, 'Gray space'))
 
