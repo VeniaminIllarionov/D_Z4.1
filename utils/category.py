@@ -2,8 +2,8 @@ from utils.product import Product
 
 
 class Category:
-    '''класс Category с атрибутами имя, описание, товары, общее количество категорий и общее количество уникальных
-    продуктов'''
+    """класс Category с атрибутами имя, описание, товары, общее количество категорий и общее количество уникальных
+    продуктов"""
     name: str
     description: str
     products: list
@@ -74,9 +74,9 @@ class Category:
         try:
             for i in self.__products:
                 total_price.append(i.price * i.quantity)
-                average_price = round(sum(total_price) / self.__len__(), 2)
         except ZeroDivisionError:
             average_price = 0
+        average_price = round(sum(total_price) / self.__len__(), 2)
         return average_price
 
 
